@@ -8,9 +8,12 @@ import Element from './element'
 import Filters from './filters'
 import constants from './constants'
 
+let initCalled=false
 function init(p5: P5) {
     const p5svg = p5 as unknown as P5SVG
 
+    if (initCalled) return p5svg
+    initCalled = true
     RendererSVG(p5svg)
     SVGFiters(p5svg)
     Rendering(p5svg)
@@ -32,4 +35,4 @@ if (typeof global.p5 !== 'undefined') {
 
 export default init
 
-export { SVGElement, SVG, p5SVG }
+export type { SVGElement, SVG, p5SVG }

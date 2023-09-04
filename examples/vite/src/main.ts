@@ -1,8 +1,8 @@
 import './style.css'
-import p5 from 'p5'
-import init, { p5SVG } from 'p5.js-svg'
+// import init, { p5SVG } from 'p5.js-svg'
+import init, { p5SVG } from '../../../src'
 
-init(p5)
+init(window.p5)  // using p5 from <script> fix crash from importing p5, don't know why
 
 const sketch = (p: p5SVG) => {
 
